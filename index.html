@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <h1>Register with us</h1><br>
+    <div class="formpart">
+    <form onsubmit="return validate()" action="https://formspree.io/f/mzbqynka" method="post" autocomplete="off"> 
+        <!-- don't show repeatedly the user input that's why using autocomplete off attribute -->
+            <div class="userpart">
+                UserName: <input type="text" id="uName" size="30" name="UserName"><br>
+                <em id="text1"></em>
+            </div>
+            <div class="emailpart">
+                Email: <input type="text" id="email" size="30" name="Email"><br>
+                <em id="text5"></em>
+            </div>
+            <div class="passwordpart">
+                Password: <input type="password" id="password" size="30" name="password">
+                <input type="checkbox" onclick="showpwd()" class="dispwd"> Show Password<br>
+                <em id="text2"></em>
+            </div>
+            <div class="cpasswordpart">
+                Confirm password: <input type="password" id="pwd" size="30" name="Confirm password"><br>
+                <em id="text4"></em>
+            </div>
+           
+            <div class="mnumber">
+                Mobile Number: <input type="text" id="num" size="30" name="Mobile Number"><br>
+                <em id="text3"></em>
+            </div>
+            <div class="submit">
+                <button type="submit">Submit</button>
+            </div><br>
+    </form>
+    </div>
+    <script src="script .js"></script>
+</body>
+</html>
