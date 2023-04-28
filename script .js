@@ -104,16 +104,15 @@ const validate=()=>{
     }
 }
 
-// Display Password
-
+    // Display Password
 const showpwd=()=>{
-    let pswd= document.querySelector("#password");
-    if(pswd.type=="password"){
-        pswd.type="text";
+        let pswd= document.querySelector("#password");
+        if(pswd.type=="password"){
+            pswd.type="text";
+        }
+        else{
+            pswd.type="password";
+        }
     }
-    else{
-        pswd.type="password";
-    }
-}
 
 
