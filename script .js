@@ -28,12 +28,8 @@ const validate=()=>{
         document.getElementById("text5").innerHTML="**email id must be in small letters";
         return false;
     }
-    if(email.search(/[@]/)==-1){
-        document.getElementById("text5").innerHTML="**please include @ ";
-        return false;
-    }
-    if(email.search(/[.]/)==-1){
-        document.getElementById("text5").innerHTML="**please include dot(.)";
+    if((email.search(/[@]/)==-1) || (email.search(/[.]/)==-1)){
+        document.getElementById("text5").innerHTML="**please include @ and dot(.)";
         return false;
     }
     if((email.indexOf("@")<=0) || (email.indexOf("@")== email.length-1)){
@@ -58,10 +54,6 @@ const validate=()=>{
         document.getElementById("text2").innerHTML="**Must be 6 characters";
         return false;
     }
-    if(psw.search(/[0-9]/)==-1){  // using regex (Regular expression)
-        document.getElementById("text2").innerHTML="**Atleast one number required";
-        return false;
-    }
     if(psw.search(/[A-Z]/)==-1){
         document.getElementById("text2").innerHTML="**Atleast one uppercase required";
         return false;
@@ -70,11 +62,11 @@ const validate=()=>{
         document.getElementById("text2").innerHTML="**Atleast one lowercase required";
         return false;
     }
-    if(psw.search(/[@/$/#/_/&/*/%]/)==-1){
-        document.getElementById("text2").innerHTML="**Atleast one symbol required";
+    if((psw.search(/[0-9]/)==-1)||(psw.search(/[@/$/#/_/&/*/%]/)==-1)){  // using regex (Regular expression)
+        document.getElementById("text2").innerHTML="**Atleast one number and symbol required";
         return false;
     }
-
+   
     // Confirm password validation
     if(!pwd){
         document.getElementById("text4").innerHTML="**Required";
